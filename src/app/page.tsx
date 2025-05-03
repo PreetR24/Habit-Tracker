@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Settings, Bell, Menu, X, Home, AlertTriangle, Github, Heart, Compass, TrendingUp, Award, Calendar, Target, BarChart2, User, Component, Droplet, Moon, Sun, Activity, Smile, Book, Edit2, Check } from 'lucide-react';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { Settings, Bell, Menu, X, Home, AlertTriangle, Github, Heart, Compass, TrendingUp, Award, Calendar, Target, BarChart2, User, Droplet, Moon, Sun, Activity, Smile, Book, Edit2, Check } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, LineChart, Line, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 
 // Navbar component
@@ -809,7 +809,7 @@ const HabitTracker = () => {
     const generateHistoricalData = () => {
       const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
       return days.map(day => {
-        const dayData: { [key: string]: any } = { name: day };
+        const dayData: { [key: string]: number | string } = { name: day };
         habits.forEach(habit => {
           // Generate some random historical completion values between 0-100%
           dayData[habit.name] = Math.floor(Math.random() * 100);
@@ -950,7 +950,7 @@ const HabitTracker = () => {
     title: string;
     value: string;
     icon: React.ReactNode;
-    variants: any;
+    variants: Variants;
   }
   
   const StatCard = ({ title, value, icon, variants }: StatCardProps) => (
