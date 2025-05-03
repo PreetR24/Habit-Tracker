@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore everything in the src folder
+src/*
+
+# But don't ignore src/app/page.tsx
+!src/app/
+!src/app/page.tsx
